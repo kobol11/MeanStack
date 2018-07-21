@@ -14,7 +14,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {PositionService} from './data/position.service';
 import {EmployeeService} from './data/employee.service';
 
-import {HttpClient} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import {HttpClient} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClient
+    HttpClientModule
   ],
   providers: [PositionService, EmployeeService],
   bootstrap: [AppComponent]
