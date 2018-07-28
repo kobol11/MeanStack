@@ -1,17 +1,15 @@
-import {Position} from './position';
-
-export class Employee{
+export class EmployeeRaw{
     _id : string;
     FirstName : string;
     LastName : string;
     AddressStreet : string;
-    AddressState : string;
+    AddressState: string;
     AddressCity : string;
     AddressZip : string;
     PhoneNum : string;
-    Extension: number;
-    Position : Position;
+    Extension : number;
+    Position : string;
     HireDate : string;
-    SalaryBonus: number;
-    __v : number;
+    SalaryBonus : number;
+    __v : number
 }
