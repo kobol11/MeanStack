@@ -24,7 +24,7 @@ export class EmployeeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     let id;
     this.paramSubscription =  this.route.params.subscribe(params =>{id = +params['_id']});
-    this.employeeSubscription = this.empService.getEmployee(this.paramSubscription).subscribe(user => this.employee = user[0]);
+    this.employeeSubscription = this.empService.getEmployee(id).subscribe(user => this.employee = user[0]);
     this.getPositionsSubscription = this.positionService.getPositions().subscribe(positions => this.positions = positions);
   }
 
@@ -36,7 +36,9 @@ export class EmployeeComponent implements OnInit, OnDestroy {
       }, 2500);
     }, (fail) =>{ 
       this.failMessage = true;
-      setTimeout(()=>{this.failMessage = false;}, 2500); 
+      setTimeout(()=>{
+        this.failMessage = false;
+      }, 2500); 
       
     })
   }
