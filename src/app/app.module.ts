@@ -15,6 +15,8 @@ import {PositionService} from './data/position.service';
 import {EmployeeService} from './data/employee.service';
 
 import {HttpClientModule} from '@angular/common/http';
+import { EmployeeComponent } from './employee/employee.component';
+import { PositionComponent } from './position/position.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {HttpClientModule} from '@angular/common/http';
     HomeComponent,
     EmployeesComponent,
     PositionsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EmployeeComponent,
+    PositionComponent
   ],
   imports: [
     BrowserModule,
