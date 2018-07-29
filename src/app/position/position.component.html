@@ -9,22 +9,24 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label class="control-label" for="PositionName">Position Name:</label>
-              <input class="form-control" id="PositionName" type="text" name="PositionName" [(ngModel)]="position.PositionName" #PositionName="ngModel" />
+              <label class="control-label" for="PositionName" [class.has-error]="PositionName.errors">Position Name:</label>
+              <input class="form-control" id="PositionName" type="text" name="PositionName" [(ngModel)]="position.PositionName" #PositionName="ngModel" required [class.has-error]="PositionName.errors" />
+              <span *ngIf="PositionName.errors && PositionName.errors.required" class="help-block" [class.has-error]="PositionName.errors"> Position name is required</span>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label class="control-label" for="PositionDescription">Description:</label>
-              <textarea class="form-control" id="PositionDescription" rows="5" name="PositionDescription" [(ngModel)]="position.PositionDescription" #PositionDescription="ngModel" ></textarea>
+              <label class="control-label" for="PositionDescription" [class.has-error]="PositionDescription.errors">Description:</label>
+              <textarea class="form-control" id="PositionDescription" rows="5" name="PositionDescription" [(ngModel)]="position.PositionDescription" #PositionDescription="ngModel" required [class.has-error]="PositionDescription.errors" ></textarea>
+              <span *ngIf="PositionDescription.errors && PositionDescription.errors.required" class="help-block" [class.has-error]="PositionDescription.errors"> Position description is required</span>
             </div>
           </div>
         </div>
         <hr />
         <a routerLink="/positions" class="btn btn-warning pull-left">Return to Position List</a>
-        <input type="submit" class="btn btn-primary pull-right" value="Update Position" />
+        <input type="submit" class="btn btn-primary pull-right" value="Update Position" [disabled]="!f.valid" />
         <br />
         <br />
       </form>
