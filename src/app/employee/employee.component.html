@@ -1,3 +1,104 @@
-<p>
-  employee works!
-</p>
+<div class="center">
+  <h2>Employee: {{employee.FirstName}}{{" "}} {{employee.LastName}}</h2>
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non odio sed eros tristique bibendum.</p>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+  <form (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label" for="FirstName">First Name:</label>
+          <input class="form-control" id="FirstName" type="text"  name="FirstName" [(ngModel)]="employee.FirstName" #FirstName="ngModel" /> 
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label" for="LastName">Last Name:</label>
+          <input class="form-control" id="LastName" type="text" name="LastName" [(ngModel)]="employee.LastName" #LastName="ngModel" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label" for="Position">Position:</label>
+          <select class="form-control" id="Position"  name="Position" [(ngModel)]="employee.Position" > 
+            <option *ngFor="let position of positions" [value]="position._id">{{position.PositionName}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label" for="SalaryBonus">Salary Bonus</label>
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input class="form-control" id="SalaryBonus" type="text" name="SalaryBonus" [(ngModel)] = "employee.SalaryBonus" #SalaryBonus="ngModel" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label class="control-label" for="AddressStreet">Address (Street):</label>
+          <input class="form-control" id="AddressStreet" type="text" name="AddressStreet" [(ngModel)]="employee.AddressStreet" #AddressStreet="ngModel" />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label class="control-label" for="AddressCity">Address (City):</label>
+          <input class="form-control" id="AddressCity" type="text" name="AddressCity" [(ngModel)]="employee.AddressCity" #AddressCity="ngModel" />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label class="control-label" for="AddressState">Address (State):</label>
+          <input class="form-control" id="AddressState" type="text" name="AddressState" [(ngModel)]="employee.AddressState" #AddressState="ngModel" />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label class="control-label" for="AddressZip">Address (Zip Code):</label>
+          <input class="form-control" id="AddressZip" type="text" name="AddressZip" [(ngModel)]="employee.AddressZip" #AddressZip="ngModel" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label class="control-label" class="control-label" for="PhoneNum">Phone Number:</label>
+          <input class="form-control" id="PhoneNum" type="text" name="PhoneNum" [(ngModel)]="employee.PhoneNum" #PhoneNum="ngModel" />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label class="control-label" for="Extension">Extension:</label>
+          <input class="form-control" id="Extension" type="text" name="Extension" [(ngModel)]="employee.Extension" #Extension="ngModel" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label" for="HireDate">Hire Date:</label>
+          <input class="form-control" id="HireDate" name="HireDate" type="text" [value]="employee.HireDate | date : 'longDate'"  readonly />
+        </div>
+      </div>
+    </div>
+    <hr />
+    <a routerLink="/employees" class="btn btn-warning pull-left">Return to Employee List</a>
+    <input type="submit" class="btn btn-primary pull-right" value="Update Employee" />
+    <br />
+    <br />
+  </form>
+</div>
+</div>
+<br />
+<div class="alert alert-success" *ngIf="successMessage">
+  <strong>Success!</strong> {{employee.FirstName}}{{" "}} {{employee.LastName}}{{"'s"}} information was successfully saved.
+</div>
+<div class="alert alert-danger" *ngIf="failMessage">
+  <strong>Error!</strong> {{employee.FirstName}}{{" "}} {{employee.LastName}}{{"'s"}} information could not be saved.
+</div>
+</div>
+<br /><br />

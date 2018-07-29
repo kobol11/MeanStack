@@ -20,7 +20,7 @@ export class PositionComponent implements OnInit, OnDestroy {
   ngOnInit() {
     let id;
     this.paramSubscription = this.route.params.subscribe(params =>{
-      id = +params['_id'];
+      id = params['_id'];
     });
     this.positionSubscription = this.service.getPosition(id).subscribe(position => this.position = position[0]);
   }
