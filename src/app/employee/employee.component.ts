@@ -4,6 +4,7 @@ import {Position} from '../data/position';
 import {ActivatedRoute} from '@angular/router';
 import {EmployeeService} from '../data/employee.service';
 import {PositionService} from '../data/position.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-employee',
@@ -28,7 +29,7 @@ export class EmployeeComponent implements OnInit, OnDestroy {
     this.getPositionsSubscription = this.positionService.getPositions().subscribe(positions => this.positions = positions);
   }
 
-  onSubmit(){
+  onSubmit(f : NgForm) : void{
     this.saveEmployeeSubscription = this.empService.saveEmployee(this.employee).subscribe((success) =>{
       this.successMessage = true;
       setTimeout(() => {

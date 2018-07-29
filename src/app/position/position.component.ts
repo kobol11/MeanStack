@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Position} from '../data/position';
 import {PositionService} from '../data/position.service';
 import {ActivatedRoute} from '@angular/router';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-position',
@@ -25,7 +26,7 @@ export class PositionComponent implements OnInit, OnDestroy {
     this.positionSubscription = this.service.getPosition(id).subscribe(position => this.position = position[0]);
   }
 
-  onSubmit(){
+  onSubmit(f : NgForm) : void{
     this.savePositionSubscription = this.service.savePosition(this.position).subscribe(
       (success) => {
         this.successMessage = true;
