@@ -1,16 +1,4 @@
-/***********************************************************************************************************************
- * WEB422 - Assignment 06
- * I declare that this assignment is my own work in accordance with Seneca Academic Policy.
- * No part of this assignment has been copied manually or electronically from any other source (including web sites)
- * or distributed to other students.
- * 
- * Name: Bolarinwa Komolafe 
- * Student ID: 122948169
- * Date: July 28th, 2018
- * 
- *Heroku Link: https://radiant-brook-44719.herokuapp.com
- *  
- ************************************************************************************************************************/
+
 
 import { Component } from '@angular/core';
 
