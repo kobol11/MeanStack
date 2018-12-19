@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-It is a MEAN stack capacity management web app. The app connects with a web API to display the employees of an organization and the available positions in the organization.
+It is a MEAN stack capacity management web app. The app connects with a web API to display the employees of an organization and the available positions in the organization. The app also pushes any modification done to the api.
 
 ## Development server
 
